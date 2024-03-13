@@ -42,7 +42,7 @@ public class PersonController {
     }
 
     @PutMapping("{id}")
-    public PersonResponse updateById(@PathVariable Long id, @RequestBody PersonRequest personRequest) {
+    public PersonResponse updateById(@PathVariable Long id, @Validated @RequestBody PersonRequest personRequest) {
         return personService.updateById(id, personRequest);
     }
 

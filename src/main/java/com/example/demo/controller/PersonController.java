@@ -39,16 +39,10 @@ public class PersonController {
         return personService.getPersons(firstName);
     }
 
-//    @GetMapping(value = "/{id}")
-//    @ResponseStatus(HttpStatus.OK)
-//    public PersonResponse getPersonById(@PathVariable Long id) {
-//        return personService.fetchPersonById(id);
-//    }
-
     @GetMapping(value = "/{id}")
-    public ResponseEntity<PersonResponse> getPersonById(@PathVariable Long id) {
-        PersonResponse personResponse = personService.fetchPersonById(id);
-        return ResponseEntity.ok().body(personResponse);
+    @ResponseStatus(HttpStatus.OK)
+    public PersonResponse getPersonById(@PathVariable Long id) {
+        return personService.fetchPersonById(id);
     }
 
     @PostMapping()
